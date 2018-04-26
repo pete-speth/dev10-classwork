@@ -23,8 +23,6 @@ public interface MoviesDao {
     Movie lookup(String title) throws MoviesDaoException;
     
     Movie lookup(int id) throws MoviesDaoException;
-    
-    int lookupIndex(String title) throws MoviesDaoException;
 
     boolean remove(Movie m) throws MoviesDaoException;
 

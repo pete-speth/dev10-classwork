@@ -1,5 +1,3 @@
-1::UP::2009::PG::Pete Docter, Bob Peterson::Disney Pixar::Great movie for kids
-2::Black Panther::2018::PG-13::Ryan Coogler::Marvel::Action packed!
-3::Good Will Hunting::1997::R::Gus::Miramax::Love this movie
-4::Star Wars: Episode VII::2015::PG-13::J.J. Abrams::Lucas Films::The most recent Star Wars installment
-5::Star Wars: Episode II::2002::PG::George Lucas::Lucas Films::The absolute worst Star Wars movie
+1::Good Will Hunting::12/12/1997::R::Gus Van Sant::Miramax::Great movie!
+2::UP::01/01/2009::R::Pete Docter, Bob Peterson::Disney Pixar::Good movie for kids.
+3::Ghostbusters::01/01/1984::PG::Ivan Reitman::Columbia Pictures::Classic

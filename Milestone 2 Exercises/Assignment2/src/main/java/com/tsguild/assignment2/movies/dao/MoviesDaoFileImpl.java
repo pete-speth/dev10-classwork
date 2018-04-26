@@ -11,6 +11,8 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.PrintWriter;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -81,23 +83,6 @@ public class MoviesDaoFileImpl implements MoviesDao {
     }
     
     @Override
-    public int lookupIndex(String title) throws MoviesDaoException {
-        
-        readFile();
-        int index = 0;
-        
-        for (Movie m : movies) {
-            if (m.getTitle().equalsIgnoreCase(title)) {
-                return index;
-            }
-            
-            index++;
-        }
-
-        return -1;
-    }
-    
-    @Override
     public void edit() throws MoviesDaoException {
         writeFile();
     }
@@ -151,7 +136,7 @@ public class MoviesDaoFileImpl implements MoviesDao {
                 Movie m = new Movie();
                 m.setIdNumber(Integer.parseInt(props[0]));
                 m.setTitle(props[1]);
-                m.setReleaseDate(props[2]);
+                m.setReleaseDate(LocalDate.parse(props[2],Movie.DATE_FORMAT));
                 m.setRatingMPAA(props[3]);
                 m.setDirectorName(props[4]);
                 m.setStudio(props[5]);

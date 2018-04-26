@@ -1,3 +1,0 @@
-001::Peter::Spethmann::Java - April 2018
-002::Joe::Shmoe::C++ - March 2015
-004::John::Long::.NET - November 2011

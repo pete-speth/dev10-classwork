@@ -7,6 +7,8 @@ package com.tsguild.assignment2.movies.ui;
 
 import com.tsguild.assignment2.movies.dao.MoviesDaoException;
 import com.tsguild.assignment2.movies.dto.Movie;
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 
 /**
  *
@@ -60,7 +62,15 @@ public class MoviesView {
         Movie m = new Movie();
 
         m.setTitle(io.readString("Title: "));
-        m.setReleaseDate(io.readString("Release Date: "));
+
+        try {
+            m.setReleaseDate(LocalDate.parse(
+                    io.readString("Release Date (MM/dd/yyyy): "),
+                    Movie.DATE_FORMAT));
+        } catch (DateTimeParseException ex) {
+            m.setReleaseDate(null);
+        }
+
         m.setRatingMPAA(io.readString("MPAA Rating: "));
         m.setDirectorName(io.readString("Director: "));
         m.setStudio(io.readString("Studio: "));
@@ -73,7 +83,7 @@ public class MoviesView {
 
     public void printEditMessage() {
         io.print("========== EDIT MOVIE ==========");
-        
+
     }
 
     // Add fail message for edit
@@ -90,7 +100,12 @@ public class MoviesView {
 
         reply = io.readString("Release Date (" + m.getReleaseDate() + "): ");
         if (!reply.isEmpty()) {
-            m.setReleaseDate(reply);
+
+            try {
+                m.setReleaseDate(LocalDate.parse(reply, Movie.DATE_FORMAT));
+            } catch (DateTimeParseException ex) {
+                m.setReleaseDate(null);
+            }
         }
 
         reply = io.readString("MPAA Rating (" + m.getRatingMPAA() + "): ");
@@ -119,7 +134,7 @@ public class MoviesView {
     }
 
     public void printRemoveHeader() {
-        io.print("========== REMOVE MOVIE ==========");   
+        io.print("========== REMOVE MOVIE ==========");
     }
 
     public void printRemovalStatus(boolean wasRemoved) {
@@ -172,18 +187,18 @@ public class MoviesView {
     public void pauseUntilEnter() {
         io.readString("Press ENTER to continue. ");
     }
-    
-    public int getID(){
+
+    public int getID() {
         return io.readInt("Input the ID#: ");
     }
-    
-    public String getTitle(){
+
+    public String getTitle() {
         return io.readString("Input the title: ");
     }
-    
-    public String getSelectionMethod(){
+
+    public String getSelectionMethod() {
         return io.readString(
                 "Would you like to select movie by ID# or title? "
-                        + "(Enter 'i' to search by ID#): ");
+                + "(Enter 'i' to search by ID#): ");
     }
 }

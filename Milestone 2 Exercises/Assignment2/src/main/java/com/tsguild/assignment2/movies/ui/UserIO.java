@@ -5,6 +5,10 @@
  */
 package com.tsguild.assignment2.movies.ui;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 /**
  *
  * @author pspethmann
@@ -22,5 +26,11 @@ public interface UserIO {
     int readInt(String prompt, int min, int max);
 
     String readString(String prompt);
+    
+    LocalDate readLocalDate(String prompt, DateTimeFormatter format);
+    
+    BigDecimal readBigDecimal(String prompt);
+    
+    BigDecimal readBigDecimal(String prompt, int min, int max); 
     
 }
