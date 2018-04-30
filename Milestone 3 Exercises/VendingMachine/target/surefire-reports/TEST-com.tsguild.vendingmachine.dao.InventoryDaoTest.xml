@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="3" failures="0" name="com.tsguild.vendingmachine.dao.InventoryDaoTest" time="0.062" errors="0" skipped="0">
+<testsuite tests="3" failures="0" name="com.tsguild.vendingmachine.dao.InventoryDaoTest" time="0.067" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.os.patch.level" value="unknown"/>
     <property name="test" value="com.tsguild.vendingmachine.dao.InventoryDaoTest"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/home/pspethmann/NetBeansProjects/VendingMachine"/>
+    <property name="user.dir" value="/home/pspethmann/Code/Repos/peter-spethmann-individual-work/Milestone 3 Exercises/VendingMachine"/>
     <property name="java.runtime.version" value="1.8.0_171-b11"/>
     <property name="java.awt.graphicsenv" value="sun.awt.X11GraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-oracle/jre/lib/endorsed"/>
@@ -61,7 +61,7 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.tsguild.vendingmachine.dao.InventoryDaoTest" name="testGetStock" time="0.015"/>
+  <testcase classname="com.tsguild.vendingmachine.dao.InventoryDaoTest" name="testGetStock" time="0.018"/>
   <testcase classname="com.tsguild.vendingmachine.dao.InventoryDaoTest" name="testLookUpItem" time="0"/>
-  <testcase classname="com.tsguild.vendingmachine.dao.InventoryDaoTest" name="testUpdate" time="0"/>
+  <testcase classname="com.tsguild.vendingmachine.dao.InventoryDaoTest" name="testUpdate" time="0.001"/>
 </testsuite>

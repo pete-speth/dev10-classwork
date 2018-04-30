@@ -23,9 +23,6 @@ public class InventoryDaoTest {
 
     InventoryDao dao = new InventoryDaoFileImpl("inventory_test.txt");
 
-    public InventoryDaoTest() {
-    }
-
     @Test
     public void testGetStock() {
         
