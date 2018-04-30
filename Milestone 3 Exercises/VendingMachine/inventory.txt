@@ -1,0 +1,5 @@
+1::Snickers::1.25::9
+2::Twix::1.25::9
+3::Peanuts::0.75::9
+4::Doritos::1.00::9
+5::Sour Patch Kids::0.85::0
