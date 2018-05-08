@@ -5,47 +5,48 @@
  */
 package com.sg.classroster.service;
 
-import com.sg.classroster.dao.ClassRosterAuditDao;
-import com.sg.classroster.dao.ClassRosterAuditDaoStubImpl;
-import com.sg.classroster.dao.ClassRosterDao;
-import com.sg.classroster.dao.ClassRosterDaoStubImpl;
-import com.sg.classroster.dao.ClassRosterPersistenceException;
 import com.sg.classroster.dto.Student;
-import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.BeforeClass;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  *
  * @author pspethmann
  */
 public class ClassRosterServiceLayerTest {
-    
-    private ClassRosterServiceLayerImpl service;
-    
+
+    private ClassRosterServiceLayer service;
+//    
+//    public ClassRosterServiceLayerTest() {
+//        ClassRosterDao dao = new ClassRosterDaoStubImpl();
+//        ClassRosterAuditDao auditDao = new ClassRosterAuditDaoStubImpl();
+//        
+//        service = new ClassRosterServiceLayerImpl(dao, auditDao);
+//    }
+
     public ClassRosterServiceLayerTest() {
-        ClassRosterDao dao = new ClassRosterDaoStubImpl();
-        ClassRosterAuditDao auditDao = new ClassRosterAuditDaoStubImpl();
-        
-        service = new ClassRosterServiceLayerImpl(dao, auditDao);
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+        service = ctx.getBean("serviceLayer", ClassRosterServiceLayer.class);
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -55,39 +56,39 @@ public class ClassRosterServiceLayerTest {
      */
     @Test
     public void testCreateStudent() throws Exception {
-       
+
         Student student = new Student("0002");
         student.setFirstName("Sally");
         student.setLastName("Smith");
         student.setCohort("Java-Jan-2015");
         service.createStudent(student);
     }
-    
+
     @Test
     public void testCreateStudentDuplicateId() throws Exception {
-        
+
         Student student = new Student("0001");
         student.setFirstName("Sally");
         student.setLastName("Smith");
         student.setCohort("Java-Jan-2015");
-        
-        try{
+
+        try {
             service.createStudent(student);
             fail("Expected ClassRosterDuplicateIdException was not thrown.");
         } catch (ClassRosterDuplicateIdException ex) {
             return;
         }
     }
-    
+
     @Test
     public void testCreateStudentInvalidData() throws Exception {
-        
+
         Student student = new Student("0002");
         student.setFirstName("");
         student.setLastName("Smith");
         student.setCohort("Java-Jan-2015");
-        
-        try{
+
+        try {
             service.createStudent(student);
             fail("Expected ClassRosterDataValidationException was not thrown.");
         } catch (ClassRosterDataValidationException ex) {
@@ -124,5 +125,5 @@ public class ClassRosterServiceLayerTest {
         student = service.removeStudent("9999");
         assertNull(student);
     }
-    
+
 }

@@ -1,0 +1,4 @@
+2018-05-07::Scott::Evan::5::3::false::HOME_LOSS_REG
+2018-05-07::Tommy::Evan::6::2::false::HOME_LOSS_REG
+2018-05-07::Evan::Tommy::3::2::false::HOME_LOSS_REG
+2018-05-07::Evan::Tommy::2::0::false::HOME_LOSS_REG

@@ -10,11 +10,14 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Scanner;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author pspethmann
  */
+
+@Component
 public class UserIOConsoleImpl implements UserIO {
 
     private Scanner input = new Scanner(System.in);

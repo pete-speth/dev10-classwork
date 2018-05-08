@@ -1,0 +1,26 @@
+title StatsTracker - Remove a Game
+View->Controller:
+Controller->View: get menu option
+note over View: display menu\nand get option
+View->Controller: menu option = remove a game
+note over Controller:Search games by date\n(See view by date diagram)
+Controller->View: get specific game
+note over View: List games on date\nand get specific game
+View->Controller:specific game option
+Controller->Service: remove Game
+Service->RankingsDao: get list of Players
+note over RankingsDao: read from rankings file
+RankingsDao->Service: list of Players
+note over Service: Update stats of Players\ninvolved in deleted game
+note over Service: re-sort list of Players\nbased on rankings
+Service->RankingsDao:list of Players
+note over RankingsDao:rewrite rankings file
+Service->GameLogDao: get lists of games from master log and each player log
+note over GameLogDao: read lists from their respective files
+GameLogDao->Service: lists of Games
+note over Service: remove Game from each list
+Service->GameLogDao: lists of Games
+note over GameLogDao:rewrite master log and player logs
+Service->Controller:success message
+Controller->View:success message
+note over View: print success message

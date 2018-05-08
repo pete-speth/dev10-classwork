@@ -1,0 +1,26 @@
+title StatsTracker - Add a Game
+View->Controller:
+Controller->View: get menu option
+note over View: display menu\nand get option
+View->Controller: menu option = add a game
+note over Controller: new Game object
+Controller->View: get Game info
+note over View: get players
+note left of View:If a Player name doesn't\nexist, confirm that they\nwant to create a new\nplayer. If not, re-enter
+note over View: set all Game info
+View->Controller:
+Controller->Service: add Game
+Service->RankingsDao: get list of Players
+note over RankingsDao: read from rankings file
+RankingsDao->Service: list of Players
+note over Service: Create player if necessary
+note over Service: Update stats of players\ninvolved in game
+note over Service: sort list of Players\nbased on ranking
+Service->RankingsDao: list of Players
+note over RankingsDao: rewrite rankings file
+Service->GameLogDao:add GameLogDao
+note over GameLogDao:add Game to master log file
+note over GameLogDao:add game to\nboth player log files
+Service->Controller:success message
+Controller->View:success message
+note over View: print success message

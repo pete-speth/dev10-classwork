@@ -1,0 +1,21 @@
+title StatsTracker - Edit a Game
+View->Controller:
+Controller->View: get menu option
+note over View: display menu\nand get option
+View->Controller: menu option = edit a game
+note over Controller:Search games by date\n(See view by date diagram)
+Controller->View: get specific game
+note over View: List games on date\nand get specific game
+View->Controller:specific game option
+Controller->View: get edited Game info
+note over View: get players
+note left of View:If a Player name doesn't\nexist, confirm that they\nwant to create a new\nplayer. If not, re-enter
+note over View: set all Game info
+View->Controller:edited game
+note over Controller: Check if info has changed.\nIf yes, continue.\nIf not, stop
+Controller->Service: remove Game
+note over Service: remove Game\n(see Remove Game diagram)
+Controller->Service: add Game
+note over Service: Add Game\n(see Add Game diagram)
+Controller->View: success message
+note over View: display success message

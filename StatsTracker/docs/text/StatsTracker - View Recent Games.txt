@@ -1,0 +1,16 @@
+title StatsTracker - View Recent Games
+View->Controller:
+Controller->View: get menu option
+note over View: display menu\nand get option
+View->Controller: menu option = view recent games
+Controller->View: for specific player?
+note over View: enter name or continue
+View->Controller: Player name or nothing
+Controller->Service: get list of Games for (Player name)
+Service->GameLogDao: get list of Games for (Player name)
+note over GameLogDao: read all Games from log file\n(player file or master file)
+GameLogDao->Service: list of Games
+note over Service: collect last 5 Games
+Service->Controller: list of last 5 Games
+Controller->View: list of last 5 Games
+note over View: display Games

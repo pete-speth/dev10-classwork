@@ -1,0 +1,19 @@
+title StatsTracker - View Games By Date
+View->Controller:
+Controller->View: get menu option
+note over View: Display menu\nand get option
+View->Controller: menu option = view games by date
+Controller->View: for specific player?
+note over View: enter name or continue
+View->Controller: Player name or nothing
+Controller->View: get search date
+note over View: get date
+View->Controller: search date
+Controller->Service: get Games on search date for (Player name)
+Service->GameLogDao: get list of Games for (Player name)
+note over GameLogDao: read Games from log file
+GameLogDao->Service: list of Games
+note over Service: filter by date
+Service->Controller: list of Games on search date
+Controller->View: list of Games on search date
+note over View: display Games

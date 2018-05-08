@@ -5,22 +5,23 @@
  */
 package com.tsguild.assignment2.movies.dao;
 
-import com.tsguild.assignment2.movies.dao.MoviesDaoException;
 import com.tsguild.assignment2.movies.dto.Movie;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.PrintWriter;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author pspethmann
  */
+
+@Component
 public class MoviesDaoFileImpl implements MoviesDao {
 
     private List<Movie> movies = new ArrayList<>();

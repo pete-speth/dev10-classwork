@@ -1,0 +1,2 @@
+2018-05-07::Scott::Rick::1::0::false::HOME_LOSS_REG
+2018-05-07::Scott::Rick::2::3::true::HOME_WIN_OT

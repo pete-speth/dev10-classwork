@@ -10,16 +10,21 @@ import com.tsguild.assignment2.movies.dao.MoviesDaoException;
 import com.tsguild.assignment2.movies.dto.Movie;
 import com.tsguild.assignment2.movies.ui.MoviesView;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
 
 /**
  *
  * @author pspethmann
  */
+
+@Configuration
 public class MoviesController {
 
     private MoviesView view;
     private MoviesDao dao;
     
+    @Autowired
     public MoviesController(MoviesView view, MoviesDao dao){
         this.view = view;
         this.dao = dao;

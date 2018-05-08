@@ -6,12 +6,9 @@
 package com.tsguild.assignment2.movies;
 
 import com.tsguild.assignment2.movies.controller.MoviesController;
-import com.tsguild.assignment2.movies.dao.MoviesDao;
-import com.tsguild.assignment2.movies.dao.MoviesDaoException;
-import com.tsguild.assignment2.movies.dao.MoviesDaoFileImpl;
-import com.tsguild.assignment2.movies.ui.MoviesView;
-import com.tsguild.assignment2.movies.ui.UserIO;
-import com.tsguild.assignment2.movies.ui.UserIOConsoleImpl;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  *
@@ -20,17 +17,35 @@ import com.tsguild.assignment2.movies.ui.UserIOConsoleImpl;
 public class App {
 
     public static void main(String[] args) {
+        
+//        // Constructor DI
+//        UserIO io = new UserIOConsoleImpl();
+//        MoviesView view = new MoviesView(io);
+//        try {
+//            MoviesDao dao = new MoviesDaoFileImpl();
+//            MoviesController controller = new MoviesController(view, dao);
+//
+//            controller.run();
+//        } catch (MoviesDaoException ex) {
+//            System.out.println("ERROR: " + ex.getMessage());
+//        }
+        
 
-        UserIO io = new UserIOConsoleImpl();
-        MoviesView view = new MoviesView(io);
-        try {
-            MoviesDao dao = new MoviesDaoFileImpl();
-            MoviesController controller = new MoviesController(view, dao);
+//        // Spring DI with xml
+//        ApplicationContext ctx = 
+//                new ClassPathXmlApplicationContext("applicationContext.xml");
+//        MoviesController controller = 
+//                ctx.getBean("controller", MoviesController.class);
+//        controller.run();
+        
 
-            controller.run();
-        } catch (MoviesDaoException ex) {
-            System.out.println("ERROR: " + ex.getMessage());
-        }
+        // Spring DI with Annotations
+        ApplicationContext ctx = 
+                new AnnotationConfigApplicationContext(
+                        "com.tsguild.assignment2.movies");
+        MoviesController controller
+                = ctx.getBean(MoviesController.class);
+        controller.run();
 
         
     }

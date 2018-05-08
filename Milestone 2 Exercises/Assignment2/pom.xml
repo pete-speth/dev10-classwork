@@ -19,9 +19,9 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>springframework</groupId>
+            <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>4.3.4 RELEASE</version>
+            <version>4.3.4.RELEASE</version>
         </dependency>
     </dependencies>
     <properties>

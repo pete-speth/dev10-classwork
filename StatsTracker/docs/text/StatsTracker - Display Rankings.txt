@@ -1,0 +1,12 @@
+title StatsTracker - Display Rankings
+View->Controller:
+Controller->View: get menu option
+note over View: Display menu\nand get option
+View->Controller: menu option = display rankings
+Controller->Service: get rankings
+Service->RankingsDao:get rankings
+note over RankingsDao: read from rankings file
+RankingsDao->Service: sorted list of Players
+Service->Controller: sorted list of Players
+Controller->View: sorted list of Players
+note over View: display rankings

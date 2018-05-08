@@ -9,15 +9,22 @@ import com.tsguild.assignment2.movies.dao.MoviesDaoException;
 import com.tsguild.assignment2.movies.dto.Movie;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author pspethmann
  */
+
+@Component
+@Configuration
 public class MoviesView {
 
     UserIO io;
-
+    
+    @Autowired
     public MoviesView(UserIO io) {
         this.io = io;
     }
