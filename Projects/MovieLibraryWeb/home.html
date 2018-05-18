@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Movie Library</title>
+</head>
+
+<body>
+    <div id="menuOptions">
+
+        <button id="createBtn">
+            Create Movie
+        </button>
+        <button id="searchButton">
+            Search
+        </button>
+        <select id="searchCategory" name="Search Category">
+            <option value="" disabled selected>Search Category</option>
+            <option value="title">Title</option>
+            <option value="releaseYear">Release Year</option>
+            <option value="directorName">Director Name</option>
+            <option value="studio">Rating</option>
+        </select>
+        <input type="text" name="searchTerm" id="searchInput" placeholder="Search Term" />
+
+    </div>
+    <hr/>
+    <table id="movieTable">
+        <tr id="tableHeader">
+            <td>Title</td>
+            <td>Release Date</td>
+            <td>Director</td>
+            <td>Rating</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tbody id="tableContent"></tbody>
+    </table>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="js/home.js"></script>
+</body>
+
+</html>

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.tsguild.assignment2.movies.dao;
+package com.tsguild.movies.dao;
 
 /**
  *
@@ -13,5 +13,9 @@ public class MoviesDaoException extends Exception {
     
     public MoviesDaoException(String message){
         super(message);
+    }
+    
+    public MoviesDaoException(String message, Exception cause){
+        super(message,cause);
     }
 }

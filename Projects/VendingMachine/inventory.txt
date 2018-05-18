@@ -1,4 +1,4 @@
-1::Snickers::1.25::8
+1::Snickers::1.25::7
 2::Twix::1.25::8
 3::Peanuts::0.75::9
 4::Doritos::1.00::9

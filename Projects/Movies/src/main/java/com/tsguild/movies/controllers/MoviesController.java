@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.tsguild.assignment2.movies.controller;
+package com.tsguild.movies.controllers;
 
-import com.tsguild.assignment2.movies.dao.MoviesDao;
-import com.tsguild.assignment2.movies.dao.MoviesDaoException;
-import com.tsguild.assignment2.movies.dto.Movie;
-import com.tsguild.assignment2.movies.ui.MoviesView;
+import com.tsguild.movies.dao.MoviesDao;
+import com.tsguild.movies.dao.MoviesDaoException;
+import com.tsguild.movies.dto.Movie;
+import com.tsguild.movies.ui.MoviesView;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -100,7 +100,7 @@ public class MoviesController {
         
         if (m != null){
             view.getEditInfo(m);
-            dao.edit();
+            dao.edit(m);
         }else {
             view.printNotFound();
         }
@@ -113,8 +113,12 @@ public class MoviesController {
         
         view.printRemoveHeader();
         Movie m = userChoiceLookup();
-        boolean removed = dao.remove(m);
-        view.printRemovalStatus(removed);
+        if (m != null) {
+            boolean removed = dao.remove(m);
+            view.printRemovalStatus(removed);
+        } else {
+            view.printNotFound();
+        }
         view.pauseUntilEnter();
     }
 

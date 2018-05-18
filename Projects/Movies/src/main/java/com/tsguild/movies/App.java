@@ -3,20 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.tsguild.assignment2.movies;
+package com.tsguild.movies;
 
-import com.tsguild.assignment2.movies.controller.MoviesController;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  *
  * @author pspethmann
  */
+
+@SpringBootApplication
 public class App {
 
     public static void main(String[] args) {
+        
+        SpringApplication.run(App.class, args);
+        
+        
         
 //        // Constructor DI
 //        UserIO io = new UserIOConsoleImpl();
@@ -39,13 +43,13 @@ public class App {
 //        controller.run();
         
 
-        // Spring DI with Annotations
-        ApplicationContext ctx = 
-                new AnnotationConfigApplicationContext(
-                        "com.tsguild.assignment2.movies");
-        MoviesController controller
-                = ctx.getBean(MoviesController.class);
-        controller.run();
+//        // Spring DI with Annotations
+//        ApplicationContext ctx = 
+//                new AnnotationConfigApplicationContext(
+//                        "com.tsguild.movies");
+//        MoviesController controller
+//                = ctx.getBean(MoviesController.class);
+//        controller.run();
 
         
     }

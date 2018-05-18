@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.tsguild.assignment2.movies.ui;
+package com.tsguild.movies.ui;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

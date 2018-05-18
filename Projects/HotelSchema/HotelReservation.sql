@@ -59,8 +59,8 @@ create table PromoCode (
 	PromoCodeID int auto_increment primary key,
     StartDate date not null,
     EndDate date not null,
-    PercentDiscount fixed null,
-	FlatDiscount fixed null
+    PercentDiscount fixed(10,4) null,
+	FlatDiscount fixed(10,4) null
 );
 
 create table Reservation (
@@ -122,9 +122,9 @@ foreign key (PromoCodeID) references PromoCode(PromoCodeID);
 create table Bill (
 	ReservationID int not null primary key,
     BillDate date not null,
-    Subtotal fixed not null,
-    Tax fixed not null,
-    Total fixed not null
+    Subtotal fixed(10,4) not null,
+    Tax fixed(10,4) not null,
+    Total fixed(10,4) not null
 );
 
 alter table Bill
@@ -146,7 +146,7 @@ create table RoomRate (
     RoomTypeID int not null,
     StartDate date not null,
     EndDate date not null,
-    Price fixed not null
+    Price fixed(10,4) not null
 );
 
 alter table RoomRate
@@ -167,9 +167,9 @@ create table AddOnCharge (
     BillDetailID int not null,
     AddOnID int not null,
     AddOnDate date not null,
-    UnitPrice fixed not null,
+    UnitPrice fixed(10,4) not null,
     Quantity int not null,
-    Total fixed not null
+    Total fixed(10,4) not null
 );
 
 alter table AddOnCharge

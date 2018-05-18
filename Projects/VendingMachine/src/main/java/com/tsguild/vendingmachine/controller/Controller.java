@@ -14,16 +14,21 @@ import com.tsguild.vendingmachine.service.VendingService;
 import com.tsguild.vendingmachine.ui.View;
 import java.math.BigDecimal;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author pspethmann
  */
+@Component
 public class Controller {
 
+    @Autowired
     View view = new View();
     VendingService vendor;
 
+    @Autowired
     public Controller(VendingService vendor) {
         this.vendor = vendor;
     }

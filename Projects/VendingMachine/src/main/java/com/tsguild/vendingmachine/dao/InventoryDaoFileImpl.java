@@ -14,11 +14,13 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author pspethmann
  */
+@Component
 public class InventoryDaoFileImpl implements InventoryDao {
 
     private String filename = "inventory.txt";

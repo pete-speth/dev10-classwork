@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.tsguild.assignment2.movies.dao;
+package com.tsguild.movies.dao;
 
-import com.tsguild.assignment2.movies.dto.Movie;
+import com.tsguild.movies.dto.Movie;
 import java.util.List;
 
 /**
@@ -18,7 +18,7 @@ public interface MoviesDao {
 
     List<Movie> list() throws MoviesDaoException;
     
-    void edit() throws MoviesDaoException;
+    void edit(Movie m) throws MoviesDaoException;
 
     Movie lookup(String title) throws MoviesDaoException;
     

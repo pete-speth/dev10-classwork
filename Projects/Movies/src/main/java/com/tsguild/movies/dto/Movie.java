@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.tsguild.assignment2.movies.dto;
+package com.tsguild.movies.dto;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -55,8 +55,8 @@ public class Movie {
         }
     }
 
-    public String getReleaseDate() {
-        return this.releaseDate.format(DATE_FORMAT);
+    public LocalDate getReleaseDate() {
+        return this.releaseDate;
     }
 
     public void setReleaseDate(LocalDate releaseDate) {

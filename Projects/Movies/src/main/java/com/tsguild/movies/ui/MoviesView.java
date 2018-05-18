@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.tsguild.assignment2.movies.ui;
+package com.tsguild.movies.ui;
 
-import com.tsguild.assignment2.movies.dao.MoviesDaoException;
-import com.tsguild.assignment2.movies.dto.Movie;
+import com.tsguild.movies.dao.MoviesDaoException;
+import com.tsguild.movies.dto.Movie;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
 import org.springframework.beans.factory.annotation.Autowired;

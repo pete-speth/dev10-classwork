@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.tsguild.assignment2.movies;
+package com.tsguild.movies;
 
-import com.tsguild.assignment2.movies.ui.UserIO;
-import com.tsguild.assignment2.movies.ui.UserIOConsoleImpl;
+import com.tsguild.movies.ui.UserIO;
+import com.tsguild.movies.ui.UserIOConsoleImpl;
 import java.math.BigDecimal;
 
 /**

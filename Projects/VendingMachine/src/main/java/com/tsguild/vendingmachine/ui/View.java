@@ -9,11 +9,13 @@ import com.tsguild.vendingmachine.model.Change;
 import com.tsguild.vendingmachine.model.Item;
 import java.math.BigDecimal;
 import java.util.List;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author pspethmann
  */
+@Component
 public class View {
 
     ConsoleIO io = new ConsoleIO();

@@ -5,7 +5,9 @@
  */
 package com.tsguild.assignment2.movies.dao;
 
-import com.tsguild.assignment2.movies.dto.Movie;
+import com.tsguild.movies.dao.MoviesDaoFileImpl;
+import com.tsguild.movies.dao.MoviesDao;
+import com.tsguild.movies.dto.Movie;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -27,17 +29,8 @@ public class MoviesDaoTest {
     public MoviesDaoTest() throws Exception {
     }
 
-    @BeforeClass
-    public static void setUpClass() {
-    }
-
-    @AfterClass
-    public static void tearDownClass() {
-    }
-
     @Before
     public void setUp() throws Exception {
-
         List<Movie> movieList = dao.list();
         movieList.clear();
     }
@@ -113,7 +106,7 @@ public class MoviesDaoTest {
         dao.add(movie1);
         
         movie1.setRatingMPAA("PG");
-        dao.edit();
+        dao.edit(movie1);
         
         movie1 = dao.lookup("Good Will Hunting");
         assertEquals(movie1.getRatingMPAA(),"PG");

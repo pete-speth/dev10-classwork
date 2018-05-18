@@ -6,23 +6,23 @@
 package com.tsguild.vendingmachine;
 
 import com.tsguild.vendingmachine.controller.Controller;
-import com.tsguild.vendingmachine.dao.InventoryDao;
-import com.tsguild.vendingmachine.dao.InventoryDaoFileImpl;
-import com.tsguild.vendingmachine.dao.LogDao;
-import com.tsguild.vendingmachine.dao.LogDaoFileImpl;
-import com.tsguild.vendingmachine.service.VendingService;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Configuration;
 
 /**
  *
  * @author pspethmann
  */
+@Configuration
 public class App {
 
     public static void main(String[] args) {
-        InventoryDao inventory = new InventoryDaoFileImpl();
-        LogDao log = new LogDaoFileImpl();
-        VendingService service = new VendingService(inventory, log);
-        Controller controller = new Controller(service);
+
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(
+                "com.tsguild.vendingmachine");
+        Controller controller = ctx.getBean(Controller.class);
         controller.run();
     }
+
 }

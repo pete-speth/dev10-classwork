@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.tsguild.assignment2.movies.dao;
+package com.tsguild.movies.dao;
 
-import com.tsguild.assignment2.movies.dto.Movie;
+import com.tsguild.movies.dto.Movie;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -14,14 +14,13 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-import org.springframework.stereotype.Component;
 
 /**
  *
  * @author pspethmann
  */
 
-@Component
+//@Component
 public class MoviesDaoFileImpl implements MoviesDao {
 
     private List<Movie> movies = new ArrayList<>();
@@ -84,7 +83,7 @@ public class MoviesDaoFileImpl implements MoviesDao {
     }
     
     @Override
-    public void edit() throws MoviesDaoException {
+    public void edit(Movie m) throws MoviesDaoException {
         writeFile();
     }
 
@@ -111,7 +110,7 @@ public class MoviesDaoFileImpl implements MoviesDao {
             for (Movie m : movies) {
                 fileOut.println(m.getIdNumber() + DELIMITER
                         + m.getTitle() + DELIMITER
-                        + m.getReleaseDate() + DELIMITER
+                        + m.getReleaseDate().format(Movie.DATE_FORMAT) + DELIMITER
                         + m.getRatingMPAA() + DELIMITER
                         + m.getDirectorName() + DELIMITER
                         + m.getStudio() + DELIMITER
