@@ -57,7 +57,13 @@ $("#changeBtn").click(function () {
             $("#changeDisplay").val(changeMsg);
         },
         error: function(){
-            console.log("AJAX error");
+            console.log("AJAX failed.");
+            $("#errorMessages")
+          .append($("<li>")
+            .attr({
+              class: "list-group-item list-group-item-danger"
+            })
+            .text("Error calling web service. Please try agian later."));
         }
     });
 
@@ -85,6 +91,12 @@ function loadItems() {
         },
         error: function () {
             console.log("AJAX failed.")
+            $("#errorMessages")
+          .append($("<li>")
+            .attr({
+              class: "list-group-item list-group-item-danger"
+            })
+            .text("Error calling web service. Please try agian later."));
         }
     })
 

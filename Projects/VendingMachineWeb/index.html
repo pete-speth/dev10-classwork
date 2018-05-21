@@ -16,6 +16,9 @@
     <div class="content">
         <h1>Vending Machine</h1>
         <hr/>
+
+        <ul class="list-group" id="errorMessages"></ul>
+
         <div class="col-md-9 col-sm-8" id="contentDiv">
             <div class="col-md-4 col-sm-6 vendingItem" v-for="item in items" v-on:click="selectItem">
                 <button type="button" class="btn-outline-primary item-button" :data-id="item.id" :data-name="item.name">
