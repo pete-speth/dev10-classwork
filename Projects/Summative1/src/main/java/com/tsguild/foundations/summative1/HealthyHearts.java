@@ -30,6 +30,6 @@ public class HealthyHearts {
 
         // Print results
         System.out.println("Your maximum heart rate should be " + maxHR + " beats per minute.");
-        System.out.println("Yout target HR zone is " + df.format(lowTarget) + " - " + df.format(highTarget) + " beats per minute");
+        System.out.println("Your target HR zone is " + df.format(lowTarget) + " - " + df.format(highTarget) + " beats per minute");
     }
 }

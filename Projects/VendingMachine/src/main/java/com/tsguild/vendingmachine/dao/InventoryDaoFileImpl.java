@@ -20,7 +20,7 @@ import org.springframework.stereotype.Component;
  *
  * @author pspethmann
  */
-@Component
+//@Component
 public class InventoryDaoFileImpl implements InventoryDao {
 
     private String filename = "inventory.txt";
@@ -53,7 +53,7 @@ public class InventoryDaoFileImpl implements InventoryDao {
     }
 
     @Override
-    public void update() throws InventoryDaoException {
+    public void update(Item item) throws InventoryDaoException {
         writeFile();
     }
 

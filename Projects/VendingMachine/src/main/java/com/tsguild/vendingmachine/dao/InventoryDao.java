@@ -18,6 +18,6 @@ public interface InventoryDao {
 
     Item lookUpItem(int id);
 
-    void update() throws InventoryDaoException;
+    void update(Item item) throws InventoryDaoException;
     
 }

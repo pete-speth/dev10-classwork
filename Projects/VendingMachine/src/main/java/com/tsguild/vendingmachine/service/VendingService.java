@@ -47,9 +47,11 @@ public class VendingService {
     }
 
     public List<Item> getInventory() throws InventoryDaoException {
-        return inventory.getStock().stream()
-                .filter(item -> item.getCount() > 0)
-                .collect(Collectors.toList());
+//        return inventory.getStock().stream()
+//                .filter(item -> item.getCount() > 0)
+//                .collect(Collectors.toList());
+
+        return inventory.getStock();
     }
 
     public Change executePurchase(int userChoice) throws InventoryDaoException,
@@ -96,7 +98,7 @@ public class VendingService {
 
         // Update inventory and complete purchase info
         item.setCount(item.getCount() - 1);
-        inventory.update();
+        inventory.update(item);
         transaction.setItemsLeft(item.getCount());
 
         // Write transaction to log
@@ -115,5 +117,10 @@ public class VendingService {
 
         Item i = inventory.lookUpItem(id);
         return i.getName();
+    }
+    
+    public BigDecimal getItemCost(int id){
+        Item i = inventory.lookUpItem(id);
+        return i.getCost();
     }
 }

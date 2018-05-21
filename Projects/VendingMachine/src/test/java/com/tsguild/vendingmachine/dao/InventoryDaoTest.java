@@ -57,7 +57,7 @@ public class InventoryDaoTest {
             Item item = dao.lookUpItem(1);
             int originalCount = item.getCount();
             item.setCount(originalCount + 1);
-            dao.update();
+            dao.update(item);
 
             items = dao.getStock();
             item = dao.lookUpItem(1);

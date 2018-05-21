@@ -57,7 +57,7 @@ public class VendingServiceTest {
 
         // Ensure that items with a count of 0 are filtered out
         List<Item> items = service.getInventory();
-        Assert.assertEquals(items.size(), 2);
+        Assert.assertEquals(items.size(), 3);
     }
 
     @Test

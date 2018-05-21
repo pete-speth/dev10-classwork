@@ -5,6 +5,8 @@
  */
 package com.tsguild.vendingmachine.dao;
 
+import com.tsguild.vendingmachine.dao.InventoryDao;
+import com.tsguild.vendingmachine.dao.InventoryDaoException;
 import com.tsguild.vendingmachine.model.Item;
 import java.math.BigDecimal;
 import java.util.List;
@@ -32,7 +34,7 @@ public class InventoryDaoFailStubImpl implements InventoryDao {
     }
 
     @Override
-    public void update() throws InventoryDaoException {
+    public void update(Item item) throws InventoryDaoException {
         throw new InventoryDaoException("Always fails");
     }
 

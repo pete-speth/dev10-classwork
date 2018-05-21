@@ -1,0 +1,30 @@
+.vendingItem {
+    border-color: black;
+    
+}
+
+div {
+    text-align: center;
+}
+
+.itemId {
+    text-align: left;
+}
+
+.item-button {
+    margin-bottom: 15px;
+    width: 225px;
+}
+
+h3 {
+    margin-top: 20px;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+button {
+    margin-top: 15px;
+    margin-right: 5px;
+}

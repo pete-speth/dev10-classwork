@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vending Machine</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="CSS/vendingMachine.css" />
+</head>
+
+<body>
+    <div class="content">
+        <h1>Vending Machine</h1>
+        <hr/>
+        <div class="col-md-9 col-sm-8" id="contentDiv">
+            <div class="col-md-4 col-sm-6 vendingItem" v-for="item in items" v-on:click="selectItem">
+                <button type="button" class="btn-outline-primary item-button" :data-id="item.id" :data-name="item.name">
+                    <p class="itemId">{{item.id}}</p>
+                    <h4 class="itemName">{{item.name}}</h4>
+                    <p class="itemPrice">${{item.cost}}</p>
+                    <p class="itemQuantity">Quantity Left: {{item.count}}</p>
+                </button>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-4" id="controlsDiv">
+
+            <div class="row" id="moneyDiv">
+                <h3>Money Added</h3>
+                <input type="text" id="moneyIn" readonly />
+                <br/>
+                <button type="button" class="btn btn-primary" id="addDollarBtn">Add Dollar</button>
+                <button type="button" class="btn btn-primary" id="addQuarterBtn">Add Quarter</button>
+                <br/>
+                <button type="button" class="btn btn-primary" id="addDimeBtn">Add Dime</button>
+                <button type="button" class="btn btn-primary" id="addNickelBtn">Add Nickel</button>
+            </div>
+
+            <div class="row" id="orderDiv">
+                <h3>Messages</h3>
+                <input type="text" id="messageDisplay" readonly />
+                <br/>
+                <label for="itemInput">Item:</label>
+                <input type="text" name="itemInput" id="itemInput" data-id="0" readonly>
+                <br/>
+                <button type="button" class="btn btn-primary" id="purchaseBtn">Make Purchase</button>
+            </div>
+
+            <div class="row" id="changeDiv">
+                <h3>Change</h3>
+                <textarea rows="4" id="changeDisplay" readonly></textarea>
+                <br/>
+                <button type="button" class="btn btn-primary" id="changeBtn">Change Return</button>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script> 
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+
+    <script src="JS/index.js"></script>
+</body>
+
+</html>

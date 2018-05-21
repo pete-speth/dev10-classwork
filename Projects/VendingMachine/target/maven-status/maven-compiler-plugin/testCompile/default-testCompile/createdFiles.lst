@@ -1,0 +1,4 @@
+com/tsguild/vendingmachine/dao/InventoryDaoFailStubImpl.class
+com/tsguild/vendingmachine/service/VendingServiceTest.class
+com/tsguild/vendingmachine/dao/InventoryDaoStubImpl.class
+com/tsguild/vendingmachine/dao/InventoryDaoTest.class

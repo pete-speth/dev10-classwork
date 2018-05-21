@@ -7,10 +7,14 @@ package com.tsguild.vendingmachine.dao;
 
 
 import com.mysql.cj.jdbc.MysqlDataSource;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.SQLException;
+import java.util.Properties;
 import javax.sql.DataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.stereotype.Component;
 
 /**
@@ -21,6 +25,12 @@ import org.springframework.stereotype.Component;
 public class MySQLDatabase {
     
     @Bean
+    public DataSourceTransactionManager getTransactionManager() 
+            throws SQLException {
+        return new DataSourceTransactionManager(getDataSource());
+    }
+    
+    @Bean
     public JdbcTemplate getJdbcTemplate() throws SQLException {
         return new JdbcTemplate(getDataSource());
     }
@@ -28,11 +38,23 @@ public class MySQLDatabase {
     
     public static DataSource getDataSource() throws SQLException {
         
+        Properties dbProperties = new Properties();
+        
+        try (InputStream stream = MySQLDatabase.class
+                .getClassLoader().getResourceAsStream("db.properties")){
+            
+            dbProperties.load(stream);
+            
+        } catch (IOException ex){
+            ex.printStackTrace();
+            System.exit(100);
+        }
+        
         MysqlDataSource ds = new MysqlDataSource();
-        ds.setServerName("localhost");
-        ds.setDatabaseName("MovieLibrary");
-        ds.setUser("admin");
-        ds.setPassword("admin");
+        ds.setServerName(dbProperties.getProperty("serverName"));
+        ds.setDatabaseName(dbProperties.getProperty("databaseName"));
+        ds.setUser(dbProperties.getProperty("userName"));
+        ds.setPassword(dbProperties.getProperty("password"));
         ds.setUseSSL(false);
         ds.setServerTimezone("UTC");
         
